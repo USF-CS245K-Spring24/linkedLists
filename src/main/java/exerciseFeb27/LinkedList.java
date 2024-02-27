@@ -50,6 +50,21 @@ public class LinkedList {
 		System.out.println();
 	}
 
+	/**
+	 * Insert a new node with the given element at the given index
+	 * @param elem element in the new node we are inserting
+	 * @param index index where we want to insert the new node
+	 */
+	public void insertAtIndex(int elem, int index) {
+		// FILL IN CODE:
+		// Create a new node
+		// Create a variable current that starts at the head
+		// Move current to the node right before the node with the given index
+
+		// Insert a new node after current
+
+		// handle edge cases
+	}
 
 	/**
 	 * Merge this sorted linked list with a given sorted linked list into a single sorted linked list.
