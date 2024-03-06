@@ -1,7 +1,5 @@
 package linkedListItertor;
 
-import exerciseFeb29.Node;
-
 import java.util.Iterator;
 
 /** A class representing a linked list. */
@@ -55,10 +53,25 @@ public class LinkedList {
 		return 0;
 	}
 
+	public Iterator<Node> iterator() {
+		return new MyIterator();
+	}
 
-	class MyIterator  {
+	class MyIterator implements Iterator<Node>  {
+		private Node curr = head;
 
-		// FILL IN CODE to implement an iterator for the linked list
+		@Override
+		public boolean hasNext() {
+			return curr != null;
+		}
+
+		@Override
+		public Node next() {
+			Node tmp = curr;
+			curr = curr.next();
+			return tmp;
+
+		}
 	}
 
 	public static void main(String[] args) {
@@ -76,6 +89,12 @@ public class LinkedList {
 		// int elemAtIndexKFromTail = list2.findKthFromEnd(20);
 		// System.out.println("element at index 2 from the end: " + elemAtIndexKFromTail);
 
+		// Using an iterator
+		Iterator<Node> it = list2.iterator();
+		while (it.hasNext()) {
+			it.next();
+			System.out.print(it.next());
+		}
 
 	}
 }
