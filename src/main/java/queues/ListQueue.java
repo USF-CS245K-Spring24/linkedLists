@@ -20,7 +20,7 @@ public class ListQueue implements Queue {
 			head = new Node(elem);
 			tail = head;
 		} else {
-			tail.next = new Node(elem);
+			tail.setNext(new Node(elem));
 			tail = tail.next();
 		}
 	}
@@ -36,7 +36,7 @@ public class ListQueue implements Queue {
 		if (head == null)
 			return null;
 		dequeued_elem = head.element();
-		head = head.next;
+		head = head.next();
 		if (head == null)
 			tail = null;
 		return dequeued_elem;
@@ -63,27 +63,4 @@ public class ListQueue implements Queue {
 		return result;
 	}
 
-	public class Node {
-		private Object element;
-		private Node next;
-
-		public Node(Object newelement) {
-			element = newelement;
-			next = null;
-		}
-
-		public Node(Object newelement, Node newnext) {
-			element = newelement;
-			next = newnext;
-		}
-
-		public Node next() {
-			return next;
-		}
-
-		public Object element() {
-			return element;
-		}
-
-	}
 }
